@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Slider</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://js.stripe.com/v3/"></script>
+
+	
+	
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://s3.amazonaws.com/harvestful-cdn/seminario/favicon-32.png">
+<link rel="stylesheet" href="css/standardFront.css">	
+
+</head>
+<body>
+
+
+<div class="container" align="center">
+
+
+
+    <form action="/charge" method="post" id="payment-form">
+        <div class="form-row">
+          <label for="card-element">
+            Credit or debit card
+          </label>
+          <div id="card-element">
+            <!-- a Stripe Element will be inserted here. -->
+          </div>
+      
+          <!-- Used to display form errors -->
+          <div id="card-errors" role="alert"></div>
+        </div>
+      
+        <input type="submit" class="submit" value="Submit Payment">
+      </form>
+	
+	
+
+
+	<div class="background-primary"> 
+       
+        <!--Menu -->
+        <div id="ContainerMenu" class="pr">
+
+            <div id="Logo">
+
+                <img src="assets/ico/logo.png"/>
+
+            </div>
+
+            <div id="menuMobile" class="cP">
+
+                <img src="assets/ico/menu.svg"/>
+
+            </div>
+
+            <div    id="MenuMobileViews" 
+                    class="ptm-1 dfc title-style-1 fc-secondary">
+                
+                <div    modal="modalEventos" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+
+                    <a class="general_main_1 mr-2 title-style-1 cP events-none">
+                         EVENTO                                       
+                    </a>
+
+                </div>
+
+                <div    modal="modalContacto" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+
+                    <a class="general_main_2 mr-2 title-style-1 cP events-none">
+                         CONTACTOS                                  
+                    </a>
+
+                </div>
+
+                <div    modal="modalPreguntas" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+
+                        <a class="general_main_3 mr-2 title-style-1 cP events-none">
+                         PREGUNTAS FRECUENTES                                      
+                        </a>
+
+                </div>
+
+                <div    modal="modalCompartir" 
+                        class="itemsSelected pbm-1 plm-3 ptm-1 txtm-lft openModal" >
+                    
+                    <a class="general_main_4 mr-2 title-style-1 cP events-none">
+                       COMPARTIR                                    
+                    </a>
+
+                </div>
+
+
+                <div class="dfr pbm-1 plm-3 ptm-1">
+
+                    <div    id="subMenuLanguage1" 
+                            style="height:2em;overflow:hidden;transition:height 1s" submenu="1" class="subMenuLanguage" >
+
+                        <div class="df txtm-lft cP events-none">
+                            
+                            <p class="title-style-1 langInUse general_dropDowns_language_1"></p>                                    
+                            <img alt="" src="assets/ico/arrow.svg" 
+                                style="margin-left:0.5em;margin-top: 0.4em;width:0.5em;height:0.5em;transform:rotate(0deg);transition:transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s"/>
+                        </div>
+
+                        <div class="pbm-1 plm-2 ptm-1 txtm-lft cP">
+                            <p class="changeLang title-style-1 setLanguage general_dropDowns_language_2"></p> 
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="padding:0em 3em" >
+                    <hr class="w-100" />
+                </div>   
+
+                <div style="display:none"class="itemsSelected dfr pbm-1 plm-3 ptm-1 title-style-1 txtm-lft">
+                    <a class="mr-2 title-style-1 cP events-none">
+                        LOGIN
+                    </a>
+                </div>   
+
+            </div>
+
+            <div id="containerTitlesMenu" class="fc-secondary">
+                <div>
+
+                    <a modal="modalEventos" 
+                       class="general_main_1 mr-2 title-style-1 cP openModal">
+                        EVENTOS                                        
+                    </a>
+
+                </div>
+
+                <div >
+                    <a modal="modalContacto" class="general_main_2 mr-2 title-style-1 cP openModal">
+                        CONTACTOS                                           
+                    </a>
+                </div>
+
+                <div>
+                    <a modal="modalPreguntas"  class="general_main_3 mr-2 title-style-1 cP openModal">
+                      PREGUNTAS FRECUENTES                                         
+                    </a>
+                </div>
+
+                <div>
+                    <a modal="modalCompartir" class="general_main_4 mr-2 title-style-1 cP openModal">
+                        COMPARTIR                                         
+                    </a>
+                </div>
+
+                <div id="dropDownsLanguage" class="pr">
+                        <div class="noSelect cP perfectCentered">
+                            <p class="langInUse general_dropDowns_language_1 title-style-1 "></p>  
+                            <img alt="" src="assets/ico/arrow.svg" style="margin-left:0.5em;width:0.5em;height:0.5em;transform:rotate(0deg);transition:transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s"/>
+                        </div>
+
+                        <div id="optionsDropDowns" style="display:none">  
+                            
+                            <img alt="" src="assets/ico/triangle.svg"/>
+                            <div    class="changeLang setLanguage general_dropDowns_language_2 txtm-lft title-style-1 cP" 
+                                    style=" padding:0.5em 1em;
+                                            border-radius:0.3em;">                                    
+                                INGLÉS
+                            </div>                    
+                        </div>   
+                 </div>
+            </div>
+
+            <div id="Login" class="dn title-style-1 cP fc-secondary">
+                LOGIN
+            </div>               
+</div>
+
+<!--fin de Menu-->
+
+<!--Modales-->
+<div id="ContainerModal" class="perfectCentered" style="display: block;">
+    
+    <div id="modal">
+
+        <img id="crossModal" src="assets/ico/cross.svg" style="width:1em" />
+        
+         
+</div>
+
+<!--Fin de modales-->
+
+<div    id="containerViews" 
+        class="perfectCentered">
+
+    <div    id="PaywallContainer" 
+            class="perfectCentered bs">
+                
+        <div    id="Slider" 
+                class="bslider"></div>
+
+
+
+        
+
+            <!-- FormClient -->
+            <div    id="FormClient" 
+            class="h-100 w-100 txtm-lft scroller pos-r prm-04">
+
+        <p class="event_form_title_general_online title-style-1 mb-05 fz-1-3 fc-secondary">
+            Seminario Creando Riqueza Presencial
+        </p>
+
+        <!--Steps-->
+
+        <div>    
+            <div id="navBuyTicket"  
+                class="background-secondary perfectCentered fz-0-7 mb-1-5 w-100">
+            
+                <p class="steps cP general_steps_select_entry mr-05 t-nr fc-primary fweight-100 " goform="FormTickets">
+                    Selecciona la Entrada
+                </p>
+
+                <img th:src="assets/ico/arrowSteps.svg" class="mr-05" style="width:0.4em;height:1em"/>
+
+                <p class="steps cP general_steps_data mr-05 t-nr fc-secondary fweight-600 " goform="FormClient">
+                    Datos de Entrada
+                </p>
+
+                <img th:src="/assets/ico/arrowSteps.svg" class="mr-05" style="width:0.4em ;height:1em"/>
+
+                <p class="steps cP general_steps_information_pay t-nr fc-primary fweight-100 " goform="FormPayment">
+                    Informacion del Pago    
+                </p>
+            </div>
+
+            <div id="navBuyTicketMobile" class="dfc df perfectCentered w-100 mb-1-5">
+                
+                <div class="df perfectCentered mb-1 w-100">
+
+                    <div class="steps cP stepDesactived mr-05" goform="FormTickets"></div>
+                    <div class="steps cP stepActived mr-05" goform="FormClient"></div>
+                    <div class="steps cP stepDesactived mr-05" goform="FormPayment"></div>
+
+                </div>
+
+                <p class="general_steps_data title-style-1 fz-0-9 fc-secondary">
+                    Datos de Entrada
+                </p>
+
+            </div>
+        </div> 
+    
+        <!--fin de Steps-->
+            
+
+        <div class="df fjs mb-1">
+            <p class="general_steps_information_pay title-style-1 lh-1 fz-1-1 fc-secondary">Informacion del Pago</p>
+            <img    src="assets/ico/credit-cards.svg" 
+                    id="imgTargetCredit" 
+                    alt="img creditcards" 
+                    style="width: 6em;height: 1.5em; display: none"/>
+        </div>    
+    
+             <!--InoutSelect-->
+             <div class="mb-1">
+                <div    id="typePay" 
+                        class=" phm-04 InputContainerSelect border-primary background-terciary">
+
+                    <div id="optionsHeight">
+                    
+                        <div  class="fc-primary fc-secondary pr txtm-lft cP select dfc">
+    
+                            <label  class="general_form_input_label_typePay fc-secondary fweight-600 fc-secondary" 
+                                    for="">
+                                FORMA DE PAGO
+                            </label>
+                            
+                            <p id="valueTypePay" class="general_inputSelect_typePay_placeholder">
+                                Seleccione la forma de Pago
+                            </p>
+    
+                            <img src="assets/ico/arrow.svg"/>
+    
+                        </div>
+
+                        <div    class="general_inputSelect_typePay_1 selectOptionBuy plm-04 fc-secondary perfectCentered fjs-start fc-primary cP txtm-lft" 
+                                id="TarjetaCredito" 
+                                data-pago="Tarjeta de Credito"
+                                value="general_inputSelect_typePay_1">
+                            Tarjeta de Credito
+                        </div>
+
+                        <div    class="selectOptionBuy plm-04 fc-secondary perfectCentered fjs-start fc-primary cP txtm-lft" 
+                                id="Paypal" 
+                                data-pago="Paypal"
+                                
+                                value="Paypal">
+                            Paypal
+                        </div>
+                    </div>
+                </div>
+            </div>   
+
+            <!--Final de InputSelect-->
+
+        <div id="formPayTarjetaCredito" style="display:block">
+                    
+            <div class="dfc mb-1 InputContainer border-primary pr ipt background-terciary pr">
+
+                
+                <img    id="numeroTarjeta" 
+                        alt="" 
+                        class="eye" 
+                        th:src="assets/ico/eye.svg" 
+                        style=" position    :   absolute;
+                                width       :   1em;
+                                top         :   40%;
+                                right       :   1em"/>
+
+                <label class="general_form_input_label_numberCC fc-secondary fweight-600 fc-secondary" for="onlyNumber5">
+                    NUMERO DE LA TARJETA
+                </label>
+    
+                <input  type         =   "password"
+                        placeholder  =   "xxxxx-xxxxx-xxxxx-xxxxx" 
+                        name         =   "numberCreditCard" 
+                        id           =  "numberCreditCard"
+                        maxlength    =   23
+                        minlength    =   23
+                        value        =   ""
+                        validate     =   "requiered maxLength minLength numberTargetCredit"
+                        class    =   "fc-primary validate-keyup addSpaceNumber"/>
+
+                <p class="mb-05 fc-error msg-error fz-0-7"></p>
+            </div>
+
+            <div class="dfc mb-1 InputContainer border-primary pr ipt background-terciary pr">
+
+                <label  class="general_form_input_label_expirationCC fc-secondary fweight-600 fc-secondary" 
+                        for="expirationCreditCard">
+                    FECHA DE EXPIRACION
+                </label>
+    
+                <input  type         =   "text"
+                        placeholder  =   "mm/aa" 
+                        name         =   "expirationCreditCard" 
+                        id           =  "expirationCreditCard"
+                        maxLength    =   5
+                        minLength    =   5
+                        value        =   ""
+                        validate     =   "requiered maxLength minLength monthYear"
+                        class    =   "fc-primary validate-keyup addSlashDateExpirationCreditCard"/>
+
+                <p class="mb-05 fc-error msg-error fz-0-7"></p>        
+
+
+            </div>
+
+            <div class="dfc mb-1  InputContainer border-primary pr ipt background-terciary">
+            
+
+                <label  class="general_form_input_label_mae_target fc-secondary fweight-600 fc-secondary" 
+                        for="name">
+                    NOMBRE DE LA TARJETA HABIENTE
+                </label>
+    
+                <input  type         =   "text"
+                        placeholder  =   "Ingrese su nombre" 
+                        name         =   "name"
+                        id           =    "onlyLetter5" 
+                        maxLength    =   20
+                        minLength    =   3
+                        value        =   ""
+                        validate     =   "requiered onlyLetters maxLength minLength"
+                        class        =   "fc-primary validate-keyup"/>
+                    
+                <p class="mb-05 fc-error msg-error fz-0-7"></p>        
+            </div>
+
+
+            <div class="ipt-container-double">
+                <div class="dfc mb-1 InputContainer border-primary pr ipt background-terciary pr">
+
+                    <img    src="assets/ico/question.svg" 
+                            alt="" 
+                            style=" position    :  absolute;
+                                    top         : 1em;
+                                    right       : 1em;
+                                    width       : 1em"/>   
+                    
+
+                    <label  class="general_form_input_label_code_cw fc-secondary fweight-600 fc-secondary" 
+                            for="onlyNumber">
+                        CODIGO CVV
+                    </label>
+        
+                    <input  type         =   "text"
+                            placeholder  =   "CW" 
+                            name         =   "code_cw" 
+                            id           =  "CVV"    
+                            maxLength    =   4
+                            minLength    =   3
+                            value        =   ""
+                            validate     =   "requiered onlyNumber maxLength minLength"
+                            class        =   "fc-primary validate-keyup"/>
+
+                    <p class="mb-05 fc-error msg-error fz-0-7"></p>           
+                </div>
+
+                <div class="dfc mb-1  InputContainer border-primary pr ipt background-terciary">
+            
+
+                    <label  class="general_form_input_label_code_postal fc-secondary fweight-600 fc-secondary" 
+                            for="onlyNumber">
+                        CODIGO POSTAL
+                    </label>
+        
+                    <input  type         =   "text"
+                            placeholder  =   "ZIP" 
+                            name         =   "onlyNumber" 
+                            id           =  "codigoPostal"    
+                            maxLength    =   8
+                            minLength    =   4
+                            min          =   1
+                            max          =   5
+                            value        =   ""
+                            validate     =   "requiered onlyNumber maxLength minLength"
+                            class        =   "fc-primary validate-keyup"/>
+
+                    <p class="mb-05 fc-error msg-error fz-0-7"></p>        
+                </div>
+
+            </div>
+
+            <div class="txtm-lft mb-05 container-checkbox" >
+                <input  type            =   "checkbox" 
+                        id              =   "savedData" 
+                        value           =   "Guardar los datos de la tarjeta para la próxima compra"
+                        defaultChecked  =   ""
+                        class           ="mr-05"    
+                />                                      
+                <label  class    =  "general_form_input_cbx_saved_data fc-secondary fz-0-9 fweight-100" 
+                        for       = "savedData">                    
+                    Guardar los datos de la tarjeta para la próxima compra                    
+                </label>
+            </div>
+        
+        </div>    
+
+        <div>
+
+         <div id="formPayPaypal" style="display:none">
+            <p class="pallm-2 fc-error msg-error">Aun no esta disponible</p>
+         </div>   
+
+            <div    id="goFormPayment"  
+                    class=" buttonPrimary btn validate-buttonGo   perfectCentered fweight-600 pallm-05">
+                <span class="button_pay mr-05"></span>
+                <span id="pricePay">$1200</span>
+            </div>
+
+            <div id="backFormPayment" 
+                 class="mt-1 df fz-0-9 w-100 goBack">
+
+                
+                    <img src="assets/ico/arrow-left.svg" alt="" class="arrowBack mr-05" />
+                    <p  class="general_button_back btn fc-secondary">Regresar</p>
+        
+            </div>
+
+            <div    id="SiteSafe" 
+                    class="fc-secondary perfectCentered mt-05 fz-0-9">
+
+           
+                    <img src="assets/ico/safe.svg" />
+                    <p class="general_form_site_safe">Sitio 100% Seguro </p>
+               
+            </div>
+        </div>    
+    </div>
+     
+<!-- Final FormPayment-->
+
+  
+
+
+
+
+     
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</div>
+
+<script src="js/forma_pago.js"></script>
+
+ </body>
+</html>

@@ -1,0 +1,1690 @@
+/****************
+    GENERAL SYSTEM
+  ******************/
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;1,700&display=swap');
+  *{
+    box-sizing: border-box;
+    font-family: regular;
+    
+
+  }
+  body
+  {
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    margin:0em;
+    min-height: 100%;
+    padding: 0em;
+    -webkit-overflow-scrolling: touch;
+    
+ 
+
+  }
+
+  html, body, div, span, input, select, button, p, i, a {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+  }
+  p, h1, h2, h3{
+    margin:0em
+  }
+  h1,h2,h3{
+    font-weight: 600;
+  }
+
+  html {
+    height: 100%;
+  }
+  a{ 
+    text-decoration:none;
+    font-weight:500;
+  }
+  input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background:transparent;
+    text-align: left;
+    font-size: 1em;
+    border: none;
+    outline: none;
+  }
+
+  input::-ms-clear {
+    display: none;
+}
+  input[type="number" i] {
+    padding: 0em !important;
+    margin:0px
+}
+  input:focus{
+    border:none
+  }
+  label{
+      font-size: 0.55em;
+      text-align: left;
+  }
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-image: none;
+      font-size: 1em;
+      height: 100%;
+      width: 100%;
+      border:none !important;
+      overflow: hidden !important;
+      outline: none;
+      cursor: pointer;
+      text-align: start;
+  }
+  select option{
+    overflow: hidden;
+  }
+  select:not(:-internal-list-box) {
+    overflow: none!important;
+    width: 10em;
+}
+ 
+  .ofw{
+    overflow: auto;
+  }
+ 
+  .fullScreen{
+    height: auto;
+    width: 100vw;
+  }
+  .ls-tickets{
+    letter-spacing: 0.05em;
+  }
+
+  .events-none{
+    pointer-events: none;
+  }
+
+
+ 
+
+  
+
+
+  /**
+    Position
+  */
+  .pos-r{
+    position: relative;
+  }
+  .pos-a{
+    position:absolute
+  }
+  /**
+    Display flex variaciones
+  **/
+  .dinline{
+    display:inline
+  }
+  .df{
+    display: flex;
+  }
+  .dn{
+    display:none
+  }
+  .dfr{
+    display: flex;
+    flex-direction: row;
+  }
+  .dfc{
+    display: flex;
+    flex-direction: column;
+  }
+  .fjs{
+    justify-content: space-between !important;
+  }
+  .fjs-start{
+    justify-content: flex-start !important;
+  }
+  .fwon{
+    flex-wrap:wrap
+  }
+  /**
+  
+    font-weight*/
+  .fweight-100{
+    font-weight: 100 !important;
+ }
+  .fweight-600{
+    font-weight: 600;
+ }
+/**
+    line-height 
+  **/
+  .lh-1{
+    line-height: 1em;
+  }
+
+  /** */
+
+/**
+    Width al 100%
+  **/
+  .w-70{
+    width: 70%;
+  }
+  .w-100{
+    width: 100%;
+  }
+  /**
+    Height al 100%
+  **/
+  .h-100{
+    height: 100%;
+  }
+
+  .w-100{
+    width: 100% !important;
+  }
+  .h-100{
+    height: 100%;
+  }
+  .fz-0-7{
+    font-size: 0.7em;
+  }
+  .fz-0-8{
+    font-size: 0.8em;
+  }
+  .fz-0-9{
+    font-size: 0.9em;
+  }
+  .fz-0-95{
+    font-size:0.95em
+  }
+  
+ 
+  .fz-1{
+    font-size: 1em;
+  }
+  .fz-1-1{
+    font-size:1.1em;
+  }
+  .fz-1-2{
+    font-size:1.2em;
+  }
+  .fz-1-3{
+    font-size:1.3em;
+  }
+  .fz-1-5{
+    font-size:1.5em;
+  }
+
+  .fz-2{
+    font-size: 2em;
+  }
+  
+  .fm-50, .fm-20, .fm-30, .fm-60, .fm-70, .fm-100, .fm-10, .fm-90,
+  .fw-50, .fw-60 , .fw-30, .fw-70, .fw-100, .fw-15, .fw-20, .fw-80, .fw-85
+  {
+    float:left;
+    box-sizing: border-box;
+  }
+
+  .frm
+  {
+    float: right !important;
+  }
+
+  .mt-05{
+    margin-top: 0.5em;
+  }
+  .mt-1{
+    margin-top: 1em;
+  }
+
+  .mt-2{
+    margin-top: 2em;
+  }
+  .mb-05{
+    margin-bottom:0.5em
+  }
+  .mb-06{
+    margin-bottom:0.6em
+  }
+  .mb-07{
+    margin-bottom:0.7em
+  }
+  .mb-08{
+    margin-bottom:0.8em
+  }
+  .mb-1{
+    margin-bottom:1em
+  }
+  .mb-1-5{
+    margin-bottom:1.5em
+  }
+  .mb-2{
+    margin-bottom:2em
+  }
+  .mr-05{
+    margin-right: 0.5em;
+  }
+  .mr-1{
+    margin-right: 1em;
+  }
+  .mr-2{
+    margin-right: 2em;
+  }
+  .mr-2-5{
+    margin-right: 2.5em;
+  }
+  .mr-3{
+    margin-right: 3em;
+  }
+  .ml-1{
+    margin-left: 1em;
+  }
+
+  .pallm-02{
+    padding:0.2em;
+  }
+  .pallm-04{
+    padding:0.4em;
+  }
+  .pallm-05{
+    padding:0.5em;
+  }
+  .pallm-1{
+    padding:1em;
+  }
+
+  .pallm-2{
+    padding:2em;
+  }
+  .ptm-04{
+    padding-top: 0.4em;
+  }
+  .ptm-05{
+    padding-top: 0.5em;
+  }
+
+  .ptm-1{
+    padding-top:1em;
+  }
+
+  .ptm-2{
+    padding-top:2em;
+  }
+
+  .ptm-3{
+    padding-top:3em;
+  }
+
+  .ptm-4{
+    padding-top:4em;
+  }
+  .prm-04{
+    padding-right: 0.4em;
+  }
+  .prm-05{
+    padding-right: 0.5em;
+  }
+
+  
+  .pbm-05{
+    padding-bottom:0.5em;
+  }
+  .pbm-1{
+    padding-bottom:1em;
+  }
+
+  .pbm-2{
+    padding-bottom:2em;
+  }
+
+  .pbm-3{
+    padding-bottom:3em;
+  }
+
+  .pbm-4{
+    padding-bottom:4em;
+  }
+  .plm-04{
+    padding-left: 0.4em;
+  }
+  .plm-1{
+    padding-left: 1em;
+  }
+  .plm-2{
+    padding-left: 2em;
+  }
+  .plm-3{
+    padding-left: 3em;
+  }
+  .phm-1{
+    padding:0 1em;
+  }
+  .phm-04{
+    padding:0 0.4em;
+  }
+  .phm-2{
+    padding:0 2em;
+  }
+  .phm-3{
+    padding:0 3em;
+  }
+  .disnm
+  {
+    display: none !important;
+  }
+
+  .fm-20{
+    width:20%;
+  }
+
+  .fm-30{
+    width:30%;
+  }
+
+  .fm-50{
+    width:50%;
+  }
+
+  .fm-60{
+    width:60%;
+  }
+
+  .fm-70{
+    width:70%;
+  }
+  
+  .fm-10{
+    width:10%;
+  }
+
+  .fm-90{
+    width:90%;
+  }
+
+  .fm-100{
+    width:100%;
+  }
+
+  .txtm-cntr, .txtm-cntr p
+  {
+    text-align: center;
+  }
+
+  .txtm-rgth, .txtm-rgth p
+  {
+    text-align: right;
+  }
+
+  .txtm-lft, .txtm-lft p
+  {
+    text-align: left;
+  }
+
+  .pr
+  {
+    position: relative;
+  }
+
+  .pa
+  {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+  }
+
+  .tbm
+  {
+    display: table;
+  }
+
+  .tcm
+  {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .cP{
+    cursor:pointer
+  }
+  .t-nr{
+    white-space: nowrap;
+  }
+
+  .bb-n{
+    border-bottom: none !important;
+  }
+  .bt-n
+  {
+    border-top: none !important;
+
+  }
+
+  #PaywallHr{
+    display: none;
+  }
+  /**
+  class para Form
+  */
+  .form{
+    overflow: auto;
+    margin-bottom: 0.5em;
+  }
+  /** 
+  Styles de Input
+  @PATH src/component/interaction/input.js
+  */
+
+  .InputContainer{
+    border-radius: 0.3em;
+    border-style: ridge;
+    padding: 0.4em 0.4em 0.4em 0.55em;
+    height: 3.2em;
+    width: 100%;
+
+}
+.inputError{
+  border: 0.1em solid #DA1300 !important;
+}
+.inputValidated{
+  border: 0.1em solid  #1BBF8C !important;
+}
+.InputContainer:focus-within{
+  border: 0.1em solid #35445F
+}
+.InputContainerSelectSecondary{
+  padding: 0%;
+  border-radius: 0.1em;
+  border-style: ridge;
+  height: 3.2em;
+  overflow: hidden;
+  width:100%;
+  transition: height 0.3s;
+}
+.InputContainerSelect{
+  border-radius: 0.1em;
+  border-style: ridge;
+  height: 3.2em;
+  overflow: hidden;
+  width:100%;
+  transition: height 1s;
+}
+.InputContainerSelect img{
+  width: 0.6em;
+  position: absolute;
+  top: 1.5em;
+  right: 0.8em;
+  transform: rotate(0deg);
+  transition: transform 0.15s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s;
+}
+.selectOptionBuy
+{
+  height:3.2em
+
+}
+
+ 
+
+.InputContainerSelectPA{
+  position: absolute;
+  right: 0em;
+  width: 2.5em;
+  top: 0em;
+  height: 1.5em;
+}
+.InputContainerSelect :first-child ~ div:hover, .InputContainerSelectSecondary :first-child ~ div:hover{
+  color:#0984ff !important;
+  background: rgba(133, 194, 255, 0.2);
+}
+.select, .select div{   
+   
+  padding: 0.4em 0em 0.4em 0em;
+
+}
+  
+.selectSecondary{    
+  padding: 0 0.3em;}
+
+.InputContainerSelectSecondary img{
+  width: 0.4em;
+  position: absolute;
+  top: 0.6em;
+  right: 0.3em;
+  transform: rotate(0deg);
+  transition: transform 0.15s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0s;;
+}
+.animationImgSelect{
+  transform: rotate(-180deg) translate(0px, 0.15em) !important;
+}
+
+
+.select:before {
+  content: '';
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  width: 0;
+  height: 0;
+ 
+}
+
+
+/*.InputContainer p{
+    position: absolute;
+    right: 1em;
+    top: 30%;
+}*/
+.InputContainer .msg-error{
+  position: absolute;
+  bottom: -2.5em;
+    left: 0em; 
+}
+.InputContainer:focus{
+  border: 0.1em solid #35445F;
+}
+
+  .container-checkbox{
+    display: inline-flex;
+    width: 100%;
+    position: relative;  
+    
+  }
+  .container-checkbox input{
+    font-size: 0.8em;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    vertical-align: middle;
+    height: 1em;
+    width: 1em;
+    border: 0.1em solid #35445F;
+    border-radius: 0.3em;
+
+    
+  }
+ 
+  .container-checkbox input:checked{
+    background:url("../assets/ico/check.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0.1em solid #eef0f2;
+    
+  }
+  .container-radio{
+    display:flex;
+    align-items: center;
+    padding:0.8em;
+  }
+ 
+  .container-radio label{
+    font-size: 1em;
+  }
+
+  .container-all-radio .container-radio:first-child{
+    border:0.1em solid #eef0f2;
+    border-radius: 0.3em 0.3em 0 0;
+
+  }
+  .container-all-radio .container-radio:last-child{
+    border-left: 0.1em solid #eef0f2;
+    border-right: 0.1em solid #eef0f2;
+    border-bottom: 0.1em solid #eef0f2;
+    border-radius: 0em 0em 0.3em 0.3em;
+  }
+  .container-radio input{
+    
+    width: 1.5em;
+    height: 1.4em;
+    margin:0 1em 0 0;
+    appearance: none;
+    border-radius: 5em;
+    border: 0.1em solid #d0d0d0;
+
+
+  }
+ 
+  .container-radio input:checked{
+    background:url("../assets/ico/check.svg");
+    background-size: cover;
+    border:  0.1em solid white;
+  }
+  .container-radio input:checked::-ms-check{
+    display: none;
+}
+input[type=checkbox]:checked::-ms-check {
+  color: white;
+  background: #0984ff; /* Hará que la marca de selección sea rverde cuando seleccionemos el botón */
+}
+
+
+  .cuponDescuento p{
+    position: absolute;
+    right: 1.1em;
+    top: 1em;
+  }
+  
+
+
+  /***/
+
+  .goBack{
+    max-height: 1.5em;
+    cursor: pointer;
+   
+  }
+  .goBack > *{
+    pointer-events: none;
+  }
+  .resumeBuyBorder{
+    border-radius: 0.3em;
+  }
+  /** 
+     Styles de Steps
+    @PATH src/component/interaction/steps.js
+  */
+
+  .white .stepDesactived{
+    width: 0.7em;
+    height: 0.7em;
+    border: 0.1em solid #eef0f2;
+    border-radius: 1em;
+  }
+  .white .stepActived{
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 1em;
+    background: #35445f;
+  }
+  #navBuyTicket{
+    height: 3em;
+    border-radius:2em;
+    padding: 0 1em;
+    justify-content:space-evenly;
+    background: #ebecef ;
+    
+  }
+  #navBuyTicketMobile{
+    display: none;
+    height: 3em;
+    border-radius:2em;
+    padding: 0 1em;
+  
+    
+  }
+  /** 
+     Styles de WhenIsEvent
+    @PATH src/component/interaction/whenIsEvent.js
+  */
+
+  #WhenIsEvent{
+    background: #f9f9f9;
+    padding: 0.5em 1em 1em 1em;
+    border-radius: 0.4em;
+  }
+  #priceEvent{
+    position: absolute;
+    top: 28%;
+    right: 4%;
+    font-size:1.5em
+  }
+  /** */
+  /**
+    Styles de Modal
+    @PATH src/component/interaction/modal/modal.js
+  */
+  #ContainerModal{
+    background-color: rgba(53, 68, 95,0.5);
+
+    height:100vh;
+    width:100vw;
+    position:absolute;
+    right: 0px;
+    top: 0px;
+    position: fixed;
+    z-index: 100000;
+
+    }
+  #modal{
+    background:#fdfdfd;
+    border-radius:1.5em;
+    max-width: 50%;
+    position:relative;
+    overflow: hidden;
+    max-height: 80%;
+    min-width:40%
+}
+ #crossModal{
+    position:absolute;
+    top: 1em;
+    right: 1.5em;
+    cursor: pointer;
+    }
+    .mhm{
+      max-height: 30em;
+      padding: 5%;
+    }
+    .portrait .mhm{
+      padding:10% 5%;
+    }
+
+  /** */
+  /** 
+    Styles de Accordion
+    @PATH src/component/Accordion.js
+  */
+    .questionAnswers{
+      background:white; 
+      border-radius: 0.3em;
+      overflow: hidden;
+      transition: height 1s;
+      -webkit-box-shadow: 0em 0em 0.2em 0.2em rgba(53,53,53,0.05);
+      -moz-box-shadow: 0em 0em 0.2em 0.2em rgba(53,53,53,0.05);
+      box-shadow: 0em 0em 0.2em 0.2em rgba(53,53,53,0.05);
+    }
+    .questionAnswers img{
+      transition:transform 0.2s
+    }
+    .deployA{
+      height: 1em;
+      transition: height 1s;
+      overflow: hidden;
+
+    }
+    #containerAccordionFaq
+    {
+      overflow: auto;
+    max-height: 20em;
+    padding-right:0.5em ;
+    }
+  
+
+  /** */
+  /**
+    Styles de DropDowns
+    @PATH src/component/interaction/dropdowns.js
+  */
+  #optionsDropDowns{
+    position:absolute;
+    background:white;
+    z-index:1000;
+    width: 120%;
+    border-radius: 0.3em;
+    margin:0.5em 0em;
+    -webkit-box-shadow: 0em 0em 0.3em 0.3em rgba(53,68,95,0.1);
+    -moz-box-shadow: 0em 0em 0.3em 0.3em rgba(53,68,95,0.1);
+    box-shadow: 0em 0em 0.3em 0.3em rgba(53,68,95,0.1);
+
+  }
+  #optionsDropDowns img{
+    position: absolute;
+    top: -0.4em;
+    right: 0.7em;
+    width: 1em;
+  }
+  /**  */
+  
+  /**
+  Shadow in div
+  */
+  .bs{
+    -webkit-box-shadow: 0em 0em 2em 2em rgba(53,68,95,0.1);
+    -moz-box-shadow: 0em 0em 2em 2em rgba(53,68,95,0.1);
+    box-shadow: 0em 0em 2em 2em rgba(53,68,95,0.1);
+
+  }
+  /**
+  No select
+  */
+  .noSelect{
+    user-select: none;
+  }
+
+  #degradedTop{
+    height: 5em;
+    width: 100%;
+    background:linear-gradient(0deg,#ffffffc4 0%, white 90%);
+    position: absolute;
+    top: 0em;
+  }
+  #degradedBottom{
+    height: 5em;
+    width: 100%;
+    background:linear-gradient(0deg,#fff 30%, #ffffffab 70%);
+    position: absolute;
+    bottom: 0em;
+  }
+  /**
+  Scroll
+  */
+  ::-webkit-scrollbar {
+    display:none;
+    appearance: none;
+    width: 0.2em;
+    height:0.2em 
+   }
+  ::-webkit-resizer{
+    appearance: none;
+    height: 20em;
+  }
+  .scroller {
+    overflow: auto;
+    scrollbar-track-color:  white;
+    scrollbar-arrow-color:  white;
+    scrollbar-color: #b2b8c2 ;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+   /* Track */
+   ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #b2b8c2 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #35445fc2; 
+  }
+  /**
+  Centrado Perfecto
+  */
+  .perfectCentered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /**
+  Position Relative
+  */
+  .pr{
+    position: relative;
+  }
+ 
+  .arrowBack{
+    width:0.4em;
+    height: 1.4em;
+    font-weight:100
+  }
+  #containerViews{
+    height:88vh;
+    align-items: start;
+  }
+  #menuMobile{
+    display:none
+  }
+  #MenuMobileViews{
+   display:none 
+  }
+
+  /* Styles de Logo
+  @PATH src/component/interaction/Logo.js
+  */
+  #Logo{
+    position: absolute;
+    top: 1em;
+    left: 2em
+  }
+  #Logo img{
+    width: 6em;
+  }
+  /**         */
+  /* Styles de Slyder
+  @PATH src/component/interaction/slyder.js
+  */
+  #Slider{
+    width:50%;
+    height:100%;
+    border-radius:2em 0 0 2em;
+}
+/** */
+  /* Styles de Menu
+  @PATH src/component/interaction/menu.js
+  */
+  #ContainerMenu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:12vh;
+    width:100%;
+    font-size:1em;
+    z-index: 1;
+  }
+  #Login{
+    position:absolute;
+    right:2em;
+}
+  #containerTitlesMenu{
+  display: flex
+}
+/**                           */
+
+  /* Styles de Paywall Container
+  @PATH src/component/interface/PaywallContainer.js
+  */
+  #PaywallContainer{
+    border-radius: 2em;
+    position:relative;
+    width: 75%;
+    height: 95%;
+    background: white;
+    overflow: hidden;
+    -webkit-box-shadow: 0em 0em 1.2em 1em rgba(53,68,95,0.1);
+    -moz-box-shadow: 0em 0em 1.2em 1em rgba(53,68,95,0.1);
+    box-shadow: 0em 0em 1.2em 1em rgba(53,68,95,0.1);
+}
+
+ #SiteSafe p{
+  font-weight: 100;
+ }
+ #SiteSafe img{
+  margin-right:0.5em;
+  width:0.8em; 
+  height:0.8em;
+ }
+  #ContainerForm{
+  position: relative;
+  width:50%;
+  height:100%;
+  padding: 2.8em 3em;
+}
+#containerFooter{
+  display: none;
+}
+  #MadeBy{
+    position: absolute;
+    bottom: 1.8em;
+    left: 2.8em;
+    font-size:0.8em;
+  }
+  #Language{
+    display: none;
+  }
+#ImgMadeBy{
+  width:9em;
+}
+#containerAccordion{
+
+}
+.accordionForm{
+  overflow: hidden;
+  height: auto;
+  transition: height 1s;
+}
+.accordionFormTitle{
+  height: 3em;
+  padding: 0.8em;
+}
+.accordionFormTitle img{
+  position: absolute;
+    top: 40%;
+    width: 0.6em;
+    right: 1em;
+    transform: rotate(0deg);
+    transition: transform 1s;
+}
+
+
+
+
+.white hr{
+  display: block;
+  width: 100%;
+  border: 0.01em solid rgba(53 68 95 / 12%);
+  margin:1em 0
+}
+
+
+  
+  @media only screen and (max-width: 992px) 
+  {
+
+
+    .white .background-primary{
+      background: linear-gradient(0deg,white 60%, transparent 38%),url("../assets/images/fondo.jpg");  
+    }
+    .white .bslider{
+      background:url("../assets/images/image.jpg") !important;
+      background-position-X:center !important;
+      background-size: cover !important;
+    }
+ 
+    #animationScrollBottom, #animationScrollTop{
+      display: none;
+    }
+
+    .fullScreen{
+      height: auto;
+    }
+
+    .ls-tickets{
+      letter-spacing: 0em !important;
+    }
+    /**
+  class para Form
+  */
+  .form{
+    height: auto;
+    max-height: none;
+  }
+   /**
+    Styles de Modal
+    @PATH src/component/interaction/modal/modal.js
+  */
+  #modal{
+    max-width: 90%;
+    max-height: 90%;
+  }
+   /** 
+     Styles de Steps
+    @PATH src/component/interaction/steps.js
+  */
+  #navBuyTicket{
+    display: none;
+    
+  }
+  #navBuyTicketMobile{
+    display:flex
+   }
+    /* Styles de Slyder
+  @PATH src/component/interaction/slyder.js
+  */
+  #Slider{
+    position:absolute;
+    top:-6em;
+    left:5%;
+    width:90%;
+    height:12em;
+    border-radius:2em;
+}
+/** */
+    /* Styles de Logo
+  @PATH src/component/interaction/Logo.js
+  */
+  #Logo{
+    position: absolute;
+    top: 1em;
+    left: 0em;
+    z-index:1222;
+    margin-left: 8%;
+  }
+  #Logo img{
+    width: 5em;
+  }
+  /**         */
+    /* Styles de Menu
+  @PATH src/component/interaction/menu.js
+  */
+    #ContainerMenu{
+      display: block;
+      height: 5em;
+    }
+    #menuMobile{
+        display: block;
+        position: absolute;
+        top: 1.8em;
+        right: 0em;
+        margin-right: 8%;
+      }
+      .landscape #MenuMobileViews{
+        height: 70vh;
+      }
+      #MenuMobileViews{
+        display: flex;
+        overflow:auto;
+        top:-45em;
+        position: absolute;
+        background: white;
+        height: 90vh;
+        z-index: 100;
+        width: 100%;
+        transition: top 1s;
+      } 
+      .menuDeploy{
+        top:5em !important
+      }
+  
+      #Login{
+        right: 0em;
+        margin-right: 21%;
+    }
+      #containerTitlesMenu{
+      display: none;
+    }
+    /**  */
+     /** 
+     Styles de WhenIsEvent
+    @PATH src/component/interaction/whenIsEvent.js
+  */
+
+  #WhenIsEvent{
+    background: #f1f1f1;
+    padding: 1em;
+    position: absolute;
+    top: 7em;
+    left: 0em;
+    margin: 0 5%;
+    width: 90%;
+  }
+  #WhenIsEvent + div{
+    margin-top: 8em;
+  }
+  #priceEvent{
+    position: initial;
+  }
+  /** */
+  /* Styles del contenedor de las vistas
+  @PATH src/views/paywall/init.js
+  */
+    #containerViews{
+      height:100%;
+      background:linear-gradient(0deg,white 0%, transparent 50%)
+
+    }
+    /** */
+      /* Styles de Paywall Container
+  @PATH src/component/interface/PaywallContainer.js
+  */
+  #PaywallContainer{
+    overflow:initial;
+    border-radius: 0em;
+    flex-direction: column;
+    width:100%;
+    margin:6em 0em 0 0;     
+    box-shadow: none;
+}
+#PaywallHr{
+  display: block;
+  width:80%;
+}
+ 
+  #ContainerForm{
+  width:100%;
+  padding:7em 10% 10% 10%;
+}
+#containerFooter{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1em;
+
+}
+  #MadeBy{
+    font-size: 1em;
+    position: initial;
+}
+  #MadeBy p{
+    margin-bottom:0.1em
+  }
+  #ImgMadeBy{
+    width: 6.5em;
+  }
+  #Language{
+    display: flex;
+
+  }
+
+
+/**                           */
+.portrait #containerAccordionFaq {
+  max-height: 20em;
+
+}
+.landscape #containerAccordionFaq{
+  max-height: 8em;
+}
+.landscape .mhm{
+  overflow: auto;
+  max-height: 15em;
+}
+#navBuyTicket{
+  font-size: 0.6em;
+}
+    .disnm
+    {
+      display: block;
+    }
+
+    .frw
+    {
+      float: right !important;
+    }
+  
+    .fw-15
+    {
+      width: 15%;
+    }
+
+    .fw-20
+    {
+      width: 20%;
+    } 
+
+    .fw-50{
+      width:50%;
+    }
+
+    .fw-60{
+      width:60%;
+    }
+
+    .fw-30{
+      width:30%;
+    }
+
+    .fw-70{
+      width:70%;
+    }
+
+    .fw-80
+    {
+      width: 80%;
+    }
+
+    .fw-85
+    {
+      width: 85%;
+    } 
+
+    .fw-100{
+      width:100%;
+    }
+
+    .ptw-1{
+      padding-top:1em;
+    }
+
+    .ptw-2{
+      padding-top:2em;
+    }
+
+    .ptw-3{
+      padding-top:3em;
+    }
+
+    .ptw-4{
+      padding-top:4em;
+    }
+    .ptw-8{
+      padding-top:8em;
+    }
+
+    .pbw-1{
+      padding-bottom:1em;
+    }
+
+    .pbw-2{
+      padding-bottom:2em;
+    }
+
+    .pbw-3{
+      padding-bottom:3em;
+    }
+
+    .pbw-4{
+      padding-bottom:4em;
+    }
+
+    .txtw-cntr
+    {
+      text-align: center;
+    }
+
+    .txtw-rgth
+    {
+      text-align: right;
+    }
+
+    .txtw-lft
+    {
+      text-align: left;
+    }
+
+    .tbw
+    {
+      display: table;
+    }
+
+    .tcw
+    {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+  .ipt-container-double-height{
+    height: 5.2em;
+  }
+  .ipt-container-double-height{
+    height:auto;
+  }
+  @media only screen and (max-height: 600px) and (min-width:993px) 
+  { 
+    #ContainerMenu{ 
+      height: 5em;
+    }
+    #containerViews{
+      height:45em;
+    }
+
+  } 
+  
+  @media only screen and (min-width: 993px) 
+  {
+    .btn-container-double .btn
+    {
+      max-width: 49%;
+      float: left;
+    }
+    
+    .btn-container-double .btn:first-child
+    {
+      margin-right: 1%;
+    }
+
+    .btn-container-double .btn:last-child
+    {
+      margin-left: 1%;
+    }
+ 
+    .ipt-container-double-height{
+      height: 5.2em;
+    }
+    .ipt-container-double .ipt
+    {
+      max-width: 50%;
+      float: left;
+    }
+
+    .ipt-container-double .ipt:first-child{
+      border-radius:0.3em 0em 0 0.3em;
+      border-right: none !important;
+    }
+    .ipt-container-double .ipt:last-child
+    {
+ 
+      border-radius:0em 0.3em 0.3em 0em;
+    }
+
+    
+
+  }
+  
+  /**
+  Animacion y styles para SeeMore
+  @PATCH src/component/interaction/contentSeeMore
+  */
+  
+  .container-see-more
+  {
+    -moz-transition: height .77s ease;
+    -webkit-transition: height .77s ease;
+    -o-transition: height .77s ease;
+    transition: height .77s ease;
+    position: relative;
+    margin:0.5em 0em 0.5em 0em;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+  }
+  .container-see-more img{
+    width:1em;
+    height: 1.1em;
+  }
+  .container-see-more p{
+    display: inline;
+  }
+  .container-see-more img{
+    margin : 0 0.5em 0 0
+  }
+
+  .container-see-more .arrow
+  {
+    display: inline;
+    margin-left:0.3em;
+    width:1em;
+    height: 0.5em;
+    transition:all 0.77s;
+    -webkit-transition: all 0.77s ease-out;
+    -moz-transition: all 0.77s ease;
+    -ms-transition: all 0.77s ease;
+  }
+
+  .container-see-more.active .arrow
+  {
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    transition-delay: 0.6s;
+  }
+  
+  .container-see-more .action-arrow 
+  {
+    cursor: pointer;
+  }
+
+  .container-see-more  .trap
+  {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    top: -1000px;
+    left: 0px;
+    z-index: -100000;
+  }
+/**
+Animaciones
+*/
+  @keyframes animationDeployD {
+    from {height: 2em}
+    to {height: 4em}
+  }
+  @keyframes animationNoDeployD {
+    from {height: 4em}
+    to {height: 2em}
+  }
+  .animationDeployD{
+    animation-name:animationDeployD;
+    animation-duration: 0.7s;
+  }
+  .animationNoDeployD{
+    animation-name:animationNoDeployD;
+    animation-duration: 0.7s;
+  }
+
+  #siteSafe img{}
+
+
+  /**                           */
+@font-face {
+  font-family: regular;
+  src: url( "../assets/font/SourceSansPro-Regular.ttf")
+}
+@font-face {
+  font-family: title;
+  src:url("../assets/font/SourceSansPro-Bold.ttf")
+}
+
+
+/**
+  styles Boton
+*/
+
+.btn{
+  cursor: pointer;
+  height: 3.2em;
+  border-radius:0.3em;
+}
+/**
+  Styles para Theme White
+*/
+
+  /** 
+    Styles de botones white
+  */
+
+  .buttonPrimary{
+    background:#0984FF;
+    color:white;
+  }
+  
+          .white .buttonPrimary{
+            background:#0984FF;
+            color:white;
+          }
+          .white .buttonPrimary:hover{
+            background:#066ED6;
+          }
+          .white .enabled-buttonPrimary,  .white .enabled-buttonSecondary{
+            background:#dedede;
+            color:white;
+            cursor: not-allowed
+          
+          }
+          .white .buttonSecondary{
+            background:white;
+            color:#0984FF;
+            border: 0.1em solid #0984FF;
+          }
+          .white .buttonSecondary:hover{
+            background:#0984FF;
+            color:white;
+          }
+         
+ /**                                                */
+  /**                                                           */
+  /** 
+  Border
+  */
+
+  .white .border-primary{
+    border: 0.1em solid #eef0f2;
+  }
+  
+  .white .bb-primary{
+    border-bottom: 0.1em solid #eef0f2;
+  }
+  .white .bt-primary{
+    border-top: 0.1em solid #eef0f2;
+  }
+  .white .bDotted{
+    border: 0.3em dotted #eef0f2;
+    
+  }
+
+   /**
+    Background App
+  **/
+        .white .background-primary{
+          background:url("../assets/images/fondo.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+
+        }
+
+        .white .background-secondary{
+          background: #f6f6f8
+        }
+        .white .background-terciary{
+          background: white;
+        }
+  /**                                                                         */
+  /**
+    TYPOGRAPHY
+  **/
+
+          .white .title-style-1
+          {
+            font-family: title;
+          }
+
+
+/**
+ Color de letras
+  **/
+          .white .fc-primary{
+            
+            color:rgba(53, 68, 95, 0.6);
+           
+          }
+
+          .white .fc-secondary{
+           
+            color:#35445F !important;
+          }
+         
+          .white .fc-terciary{
+            color:#0984ff
+          }
+          .white .fc-error
+          {
+            color:#DA1300 
+          }
+
+          .white .fc-validated{
+            color:#1BBF8C 
+          }
+
+        /**
+        background slider
+        */
+        .white .bslider{
+          background:linear-gradient(0deg,white 0%, transparent 50%),url("../assets/images/image.jpg");
+          background-position-X:center;
+          background-size: cover;
+        }
+     
+                 
+                     
+
+
+
+
+ 
+        .dark .buttonPrimary{
+          background:black;
+          color:white;
+        }
+
+
+#animationScrollTop{
+  position: absolute;
+  z-index: 10;
+  top: 0em;
+  left: 0em;;
+  height: 8em;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);
+}
+#animationScrollBottom{
+ height: 8em;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%);  
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
+  
+}
+#signature{
+  height: 9em;
+  width: 100%;
+  background:rgba(53, 68, 95, 0.01); 
+
+}
+#svgSignature path{
+  fill:rgba(53, 68, 95, 0.6)
+}
+.jSignature{
+  width: 15em !important;
+  height:5em !important
+}

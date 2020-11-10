@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Slider</title>
+
+	<!-- Importacion del jQuery -->
+	<script src="js/lib/jquery-2.1.4.min.js"></script>
+
+	<script src="js/lib/TweenMax.min.js"></script>
+	
+	<!-- Importacion del Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://js.stripe.com/v3/"></script>
+
+	
+	
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://s3.amazonaws.com/harvestful-cdn/seminario/favicon-32.png">
+<link rel="stylesheet" href="css/standardFront.css">	
+
+</head>
+<body>
+
+
+<div class="container" align="center">
+      
+<form action="#" method="post" id="payment-form">
+    <div class="form-row">
+      <label for="card-element">
+        Credit or debit card
+      </label>
+      <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+  
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
+    </div>
+  
+    <button>Submit Payment</button>
+  </form>
+	
+	
+
+ 
+</div>
+
+<script src="js/stripeimpl.js"></script>
+
+ </body>
+</html>
