@@ -1,7 +1,7 @@
 (
 function(){
 
-    const urlCRUD = 'http://localhost:8180/simon/stripe/paymentintent';
+    const urlCRUD = 'http://localhost:8080/CoreServicesV6/stripe/paymentintent';
     
 // Custom styling can be passed to options when creating an Element.
 // (Note that this demo uses a wider set of styles than the guide below.)
