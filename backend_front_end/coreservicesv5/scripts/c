@@ -1,0 +1,37 @@
+ALTER TABLE EVENT_FUND_SETTINGS
+ADD signature_required boolean default false, ADD signature_document_id varchar;	
+
+CREATE TABLE CUSTOMER_USER_EVENT_CONTRACT_SIGN (
+	id		bigserial,
+	customer_user_id	bigint not null,
+	application_id		bigint not null,
+	signature_url		varchar not null,
+	signature_status	boolean,
+	signed_at			timestamp without time zone,
+	signature_data		varchar
+);
+
+CREATE TABLE SIGNATURE_GATEWAY (
+	id		integer,
+	name	varchar not null,
+	sandbox_url	varchar not null,
+	production_url	varchar not null,
+	constraint SIGNATURE_GATEWAY_PK primary key (id),
+	constraint SIGNATURE_GATEWAY_NAME_UQ unique (name)
+);
+
+INSERT INTO SIGNATURE_GATEWAY (id, name, sandbox_url, production_url) VALUES (1, 'SIGNNOW', 'https://app-eval.signnow.com/','https://api.signnow.com/');
+
+CREATE TABLE CUSTOMER_SIGNATURE_GATEWAY (
+	customer_id		bigint,
+	signature_gateway_id	int,
+	signatureApiParam1		varchar,
+	signatureApiParam2		varchar,
+	signatureApiParam3		varchar,
+	signatureApiParam4		varchar,
+	constraint CUSTOMER_SIGNATURE_GATEWAY_PK primary key (customer_id, signature_gateway_id),
+	constraint CUST_SIGN_GW_CUST_FK foreign key (customer_id) references customer(id) on delete cascade,
+	constraint CUST_SIGN_GW_SGW_FK foreign key (signature_gateway_id) references signature_gateway(id) on delete cascade
+);
+
+INSERT INTO CUSTOMER_SIGNATURE_GATEWAY (customer_id, signature_gateway_id, signatureApiParam1, signatureApiParam2, signatureApiParam3, signatureApiParam4) VALUES (102, 1, 'abb472881a7c6b87c1bfb156ac3a4e97', 'fe0f456a1b6fcf4242ef074d916f3c79', 'notifications@harvestful.org', 'harvest123++');
